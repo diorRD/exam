@@ -1,0 +1,41 @@
+@mixin mobile() {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+@mixin tablet() {
+    @media (min-width: 577px) and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin media($minwidth, $maxwidth) {
+    @media (min-width: $minwidth) and ($maxwidth) {
+        @content;
+    }
+}
+@mixin minwidth($mnwidth) {
+    @media (min-widht: $mnwidth) {
+        @content;
+    }
+}
+@mixin maxwidth($mxwidth) {
+    @media (max-width: $mxwidth) {
+        @content;
+    }
+}
+
+@mixin btn() {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    padding: 14px 39px;
+    border: 3px solid $btn-color;
+    color: $main-color;
+    background: $btn-color;
+
+
+    &:hover {
+        background: transparent;
+        color: $btn-color;
+    }
+}

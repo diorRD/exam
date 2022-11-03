@@ -232,3 +232,62 @@ only screen and (min-resolution: 2dppx) {
     line-height: 25px;
     color: #939CAA;
 }
+
+
+
+
+
+.section4_banner{
+    margin-top: 200px;
+    background-image: url("../images/footer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right bottom;
+}
+
+.section4_container{
+    padding: 102px 0;
+
+
+
+    @include maxwidth(1170px) {
+        padding: 102px 50px;
+    }
+}
+
+.section4_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    @include maxwidth(878px) { 
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.section4__h3 h3 {
+    font-weight: 700;
+    font-size: 44px;    
+    line-height: 48px;
+    letter-spacing: -2.14286px;
+    max-width: 415px;
+    color: #FFFFFF;
+
+    @include maxwidth(878px) {
+        text-align: center;
+        max-width: 457px;
+    }
+
+    @include maxwidth(426px) {
+        font-size: 32px;
+        max-width: 311px;
+    }
+}
+
+.section4__ul{
+    display: flex;
+    gap: 18px;
+}

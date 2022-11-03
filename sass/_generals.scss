@@ -76,69 +76,56 @@ only screen and (min-resolution: 2dppx) {
     color: #FFFFFF;
 }
 .section1__div a{
-    margin-left: 90px;
-    padding: 13px 39px;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 25px;
-    color: #FFFFFF;
-    background: #FCB72B;
+ @include btn;
+}
+.section1__container{
+
+@include maxwidth(768px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     
-    &:hover{
-        padding: 12px 39px;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 25px;
+    .section1__div h1{
+    text-align: center;
+    }
+    .section1__div p{
+        text-align: center
+    }
+    .section1__div a{
+     @include btn;
+     text-align: center;
+    }
+        padding: 0 65px;
         text-align: center;
-        color: #FCB72B;
-        background-color: #5D6476;
-        border: 1px solid #FCB72B;
+    }
+
+    @include maxwidth(500px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .main__section2{
-    margin-top: 160px;
+    margin: 160px 0 100px 0;
 }
 .section2__ul{
     display: flex;
     gap: 30px;
+
+    @include maxwidth(1170px) {
+        padding: 0 70px;
+    }
+
+    @include maxwidth(768px) {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    @include maxwidth(500px) {
+        padding: 0 40px;
+    }
 }
 .section2__list_item p{
     font-family: 'Lexend Deca';
@@ -149,94 +136,130 @@ only screen and (min-resolution: 2dppx) {
     color: #939CAA;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.main__section3{
+    overflow: hidden;
+}
 .section3__ul{
-    margin: 150px 0;
-    flex-wrap: wrap;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 160px;
 }
 .section3__list_item{
-    margin-bottom: 150px;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 100px;
-}
-.section3__list_item h2{
-    width: 445px;
-    height: 96px;
-    font-family: 'Space Mono';
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 48px;
-    letter-spacing: -2.14286px;
-    color: #495567;
+    justify-content: space-between;
+
+    background-image: url("../images/section3_line1.png");
+    background-repeat: no-repeat;
+    background-position: right -180px bottom;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: -50%;
+        width: 445px;
+        height: 445px;
+        border-radius: 50%;
+        z-index: -1;
+        flex-shrink: 0;
+        background: #E5ECF4;
+
+
+    @include maxwidth(758px) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 56px;
+    }
+
+    @include maxwidth(500px) {
+        background-position: right -450px top 100px;
+    }
+   }
 }
 .section3__list_item2{
-    margin-bottom: 150px;
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 100px;
+    justify-content: space-between; 
+    flex-direction: row-reverse;  
+    background-image: url("../images/section3_line2.png");
+    background-repeat: no-repeat;
+    background-position: left -500px top;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -50%;
+        width: 445px;
+        height: 445px;
+        border-radius: 50%;
+        z-index: -1;
+        flex-shrink: 0;
+        background: #E5ECF4;
+
+        @include maxwidth(1113px) {
+            display: none;
+        }
+    }
+
+    @include maxwidth(758px) {
+        flex-direction: column-reverse;
+        gap: 56px;
+        background-position: right 250px top 200px;
+    }
+
+    @include maxwidth(500px) {
+        background-position: right 150px top 200px;
+    }
 }
-.section3__list_item2 h2{
-    width: 445px;
-    height: 96px;
-    font-family: 'Space Mono';
+.section3__div{
+
+    @include maxwidth(758px) {
+        display: flex;
+        flex-direction: column;
+    align-items: center;
+    }
+}
+.section3__div h2 {
     font-weight: 700;
     font-size: 48px;
     line-height: 48px;
+    max-width: 445px;
     letter-spacing: -2.14286px;
-    color: #495567;
+    color: $h-color;
+
+    @include maxwidth(758px) {
+        text-align: center;
+    }
+
+    @include maxwidth(500px) {
+        font-size: 32px;
+    }
 }
-.section3__list_item p{
-    padding: 24px;
-    width: 445px;
-    height: 100px;
+.section3__div p {
     font-family: 'Lexend Deca';
+    font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 25px;
-    color: #939CAA;
+    margin-top: 24px;
+    margin-bottom: 60px;
+    max-width: 445px;
+    color: $p-color;
+
+    @include maxwidth(758px) {
+        text-align: center;
+    }
+
+    @include maxwidth(500px) {
+        font-size: 13px;
+    }
 }
-.section3__list_item2 p{
-    padding: 24px;
-    width: 445px;
-    height: 100px;
-    font-family: 'Lexend Deca';
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
-    color: #939CAA;
+.section3__div a {
+    @include btn;
+    max-width: 180px;
 }
-
-
-
-
-
 .section4_banner{
     margin-top: 200px;
     background-image: url("../images/footer.png");
@@ -244,30 +267,23 @@ only screen and (min-resolution: 2dppx) {
     background-size: cover;
     background-position: right bottom;
 }
-
 .section4_container{
     padding: 102px 0;
-
-
 
     @include maxwidth(1170px) {
         padding: 102px 50px;
     }
 }
-
 .section4_container{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-
-
-    @include maxwidth(878px) { 
+    @include maxwidth(758px) { 
         flex-direction: column;
         gap: 40px;
     }
 }
-
 .section4__h3 h3 {
     font-weight: 700;
     font-size: 44px;    
@@ -276,17 +292,16 @@ only screen and (min-resolution: 2dppx) {
     max-width: 415px;
     color: #FFFFFF;
 
-    @include maxwidth(878px) {
+    @include maxwidth(758px) {
         text-align: center;
         max-width: 457px;
     }
 
-    @include maxwidth(426px) {
+    @include maxwidth(500px) {
         font-size: 32px;
         max-width: 311px;
     }
 }
-
 .section4__ul{
     display: flex;
     gap: 18px;
